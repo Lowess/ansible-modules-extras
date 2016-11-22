@@ -207,7 +207,7 @@ class ElbInformation(object):
         if all_elbs:
             if self.names:
                 for existing_lb in all_elbs:
-                    if existing_lb.name in self.names:
+                    if self.names is None or existing_lb.name in self.names:
                         elb_array.append(existing_lb)
             else:
                 elb_array = all_elbs
